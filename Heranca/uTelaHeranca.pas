@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls, Data.DB,
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.DBCtrls,
-  ZAbstractRODataset, ZAbstractDataset, ZDataset, uDtmConexao, uEnum;
+  ZAbstractRODataset, ZAbstractDataset, ZDataset, uDtmConexao, uEnum, RxToolEdit;
 
 type
   TfrmTelaHeranca = class(TForm)
@@ -110,7 +110,11 @@ begin
   for var i := 0 to ComponentCount - 1 do
   begin
     if (Components[i]) is TLabeledEdit then
-      TLabeledEdit(Components[i]).Text := '';
+      TLabeledEdit(Components[i]).Text := ''
+    else if (Components[i]) is TMaskEdit then
+      TMaskEdit(Components[i]).Text := ''
+    else if (Components[i]) is TDateEdit then
+      TDateEdit(Components[i]).Date := Date;
   end;
 end;
 

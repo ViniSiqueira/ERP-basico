@@ -1,26 +1,27 @@
 inherited frmCadastroCategoria: TfrmCadastroCategoria
   Caption = 'Cadastro de Categorias'
-  ClientHeight = 428
-  ClientWidth = 1295
-  ExplicitWidth = 1301
-  ExplicitHeight = 457
+  ClientHeight = 288
+  ClientWidth = 749
+  ExplicitWidth = 755
+  ExplicitHeight = 317
   PixelsPerInch = 96
   TextHeight = 13
   inherited pgcPrincipal: TPageControl
-    Width = 1295
-    Height = 387
+    Width = 749
+    Height = 247
+    ActivePage = tbManutencao
     ExplicitWidth = 1295
     ExplicitHeight = 387
     inherited tbListagem: TTabSheet
-      ExplicitWidth = 1287
-      ExplicitHeight = 359
+      ExplicitWidth = 741
+      ExplicitHeight = 219
       inherited pnlListagemTopo: TPanel
-        Width = 1287
+        Width = 741
         ExplicitWidth = 1287
       end
       inherited gridListagem: TDBGrid
-        Width = 1287
-        Height = 310
+        Width = 741
+        Height = 170
         Columns = <
           item
             Expanded = False
@@ -35,8 +36,8 @@ inherited frmCadastroCategoria: TfrmCadastroCategoria
       end
     end
     inherited tbManutencao: TTabSheet
-      ExplicitWidth = 1287
-      ExplicitHeight = 359
+      ExplicitWidth = 741
+      ExplicitHeight = 219
       object edtCodigo: TLabeledEdit
         Tag = 1
         Left = 3
@@ -64,12 +65,12 @@ inherited frmCadastroCategoria: TfrmCadastroCategoria
     end
   end
   inherited pnlRodape: TPanel
-    Top = 387
-    Width = 1295
+    Top = 247
+    Width = 749
     ExplicitTop = 387
     ExplicitWidth = 1295
     inherited brnFechar: TBitBtn
-      Left = 1216
+      Left = 670
       Anchors = [akTop, akRight]
       ExplicitLeft = 1216
     end

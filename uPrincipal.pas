@@ -28,6 +28,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure menuCategoriaClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure menuClienteClick(Sender: TObject);
   private
     { Private declarations }
     TeclaEnter: TMREnter;
@@ -45,7 +46,7 @@ implementation
 {$R *.dfm}
 
 uses
-  uCadastroCategoria;
+  uCadastroCategoria, uCadastroCliente;
 
 procedure TfrmPrincipal.CriarConexaoComBanco;
 begin
@@ -79,6 +80,13 @@ begin
   frmCadastroCategoria := TfrmCadastroCategoria.Create(self);
   frmCadastroCategoria.ShowModal;
   frmCadastroCategoria.Release;
+end;
+
+procedure TfrmPrincipal.menuClienteClick(Sender: TObject);
+begin
+  frmCadastroCliente := TfrmCadastroCliente.Create(self);
+  frmCadastroCliente.ShowModal;
+  frmCadastroCliente.Release;
 end;
 
 procedure TfrmPrincipal.menuFecharClick(Sender: TObject);
