@@ -9,7 +9,6 @@ inherited frmCadastroCategoria: TfrmCadastroCategoria
   inherited pgcPrincipal: TPageControl
     Width = 1295
     Height = 387
-    ActivePage = tbManutencao
     ExplicitWidth = 1295
     ExplicitHeight = 387
     inherited tbListagem: TTabSheet
@@ -40,7 +39,7 @@ inherited frmCadastroCategoria: TfrmCadastroCategoria
       ExplicitHeight = 359
       object edtCodigo: TLabeledEdit
         Tag = 1
-        Left = 5
+        Left = 3
         Top = 20
         Width = 121
         Height = 21
