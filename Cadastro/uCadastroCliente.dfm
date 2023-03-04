@@ -1,21 +1,23 @@
 inherited frmCadastroCliente: TfrmCadastroCliente
   Caption = 'Cadastro de Clientes'
-  ClientHeight = 315
-  ClientWidth = 654
-  ExplicitWidth = 660
-  ExplicitHeight = 344
+  ClientHeight = 360
+  ClientWidth = 1118
+  ExplicitWidth = 1124
+  ExplicitHeight = 389
   PixelsPerInch = 96
   TextHeight = 13
   inherited pgcPrincipal: TPageControl
-    Width = 654
-    Height = 274
+    Width = 1118
+    Height = 319
     ActivePage = tbManutencao
-    ExplicitTop = 1
+    ExplicitWidth = 830
+    ExplicitHeight = 269
     inherited tbListagem: TTabSheet
-      ExplicitWidth = 646
-      ExplicitHeight = 246
+      ExplicitWidth = 1110
+      ExplicitHeight = 291
       inherited pnlListagemTopo: TPanel
         Width = 646
+        ExplicitWidth = 646
       end
       inherited gridListagem: TDBGrid
         Width = 646
@@ -29,21 +31,25 @@ inherited frmCadastroCliente: TfrmCadastroCliente
           item
             Expanded = False
             FieldName = 'NOME'
+            Width = 200
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'ENDERECO'
+            Width = 200
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'CIDADE'
+            Width = 200
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'BAIRRO'
+            Width = 150
             Visible = True
           end
           item
@@ -64,18 +70,20 @@ inherited frmCadastroCliente: TfrmCadastroCliente
           item
             Expanded = False
             FieldName = 'EMAIL'
+            Width = 200
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'DATA_NASCIMENTO'
+            Width = 100
             Visible = True
           end>
       end
     end
     inherited tbManutencao: TTabSheet
-      ExplicitWidth = 646
-      ExplicitHeight = 246
+      ExplicitWidth = 1110
+      ExplicitHeight = 291
       object lblCEP: TLabel
         Left = 520
         Top = 49
@@ -209,8 +217,14 @@ inherited frmCadastroCliente: TfrmCadastroCliente
     end
   end
   inherited pnlRodape: TPanel
-    Top = 274
-    Width = 654
+    Top = 319
+    Width = 1118
+    ExplicitTop = 269
+    ExplicitWidth = 830
+    inherited brnFechar: TBitBtn
+      Left = 1028
+      ExplicitLeft = 1028
+    end
     inherited btnNavegator: TDBNavigator
       Hints.Strings = ()
     end

@@ -9,15 +9,14 @@ inherited frmCadastroCategoria: TfrmCadastroCategoria
   inherited pgcPrincipal: TPageControl
     Width = 749
     Height = 247
-    ActivePage = tbManutencao
-    ExplicitWidth = 1295
-    ExplicitHeight = 387
+    ExplicitWidth = 749
+    ExplicitHeight = 247
     inherited tbListagem: TTabSheet
       ExplicitWidth = 741
       ExplicitHeight = 219
       inherited pnlListagemTopo: TPanel
         Width = 741
-        ExplicitWidth = 1287
+        ExplicitWidth = 741
       end
       inherited gridListagem: TDBGrid
         Width = 741
@@ -67,12 +66,12 @@ inherited frmCadastroCategoria: TfrmCadastroCategoria
   inherited pnlRodape: TPanel
     Top = 247
     Width = 749
-    ExplicitTop = 387
-    ExplicitWidth = 1295
+    ExplicitTop = 247
+    ExplicitWidth = 749
     inherited brnFechar: TBitBtn
       Left = 670
       Anchors = [akTop, akRight]
-      ExplicitLeft = 1216
+      ExplicitLeft = 670
     end
     inherited btnNavegator: TDBNavigator
       Hints.Strings = ()

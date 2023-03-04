@@ -120,6 +120,16 @@
         <DCCReference Include="Terceiros\Enter.pas"/>
         <DCCReference Include="Heranca\uEnum.pas"/>
         <DCCReference Include="Classes\cCadCategoria.pas"/>
+        <DCCReference Include="Cadastro\uCadastroCliente.pas">
+            <Form>frmCadastroCliente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Classes\cCadCliente.pas"/>
+        <DCCReference Include="Cadastro\uCadastroProuto.pas">
+            <Form>frmCadastroProduto</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Classes\cCadProduto.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
