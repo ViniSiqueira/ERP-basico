@@ -10,18 +10,18 @@ inherited frmCadastroCliente: TfrmCadastroCliente
     Width = 1118
     Height = 319
     ActivePage = tbManutencao
-    ExplicitWidth = 830
-    ExplicitHeight = 269
+    ExplicitWidth = 1118
+    ExplicitHeight = 319
     inherited tbListagem: TTabSheet
       ExplicitWidth = 1110
       ExplicitHeight = 291
       inherited pnlListagemTopo: TPanel
-        Width = 646
-        ExplicitWidth = 646
+        Width = 1110
+        ExplicitWidth = 1110
       end
       inherited gridListagem: TDBGrid
-        Width = 646
-        Height = 197
+        Width = 1110
+        Height = 242
         Columns = <
           item
             Expanded = False
@@ -127,7 +127,7 @@ inherited frmCadastroCliente: TfrmCadastroCliente
         EditLabel.Caption = 'C'#243'digo'
         MaxLength = 10
         NumbersOnly = True
-        TabOrder = 1
+        TabOrder = 8
       end
       object edtCep: TMaskEdit
         Left = 520
@@ -136,7 +136,7 @@ inherited frmCadastroCliente: TfrmCadastroCliente
         Height = 21
         EditMask = '99999-999;1;_'
         MaxLength = 9
-        TabOrder = 2
+        TabOrder = 1
         Text = '     -   '
       end
       object edtEndereco: TLabeledEdit
@@ -181,7 +181,7 @@ inherited frmCadastroCliente: TfrmCadastroCliente
         EditLabel.Height = 13
         EditLabel.Caption = 'Email'
         MaxLength = 250
-        TabOrder = 6
+        TabOrder = 7
       end
       object edtDataNascimento: TDateEdit
         Left = 523
@@ -191,7 +191,7 @@ inherited frmCadastroCliente: TfrmCadastroCliente
         DialogTitle = 'Selecione a data'
         NumGlyphs = 2
         CalendarStyle = csDialog
-        TabOrder = 7
+        TabOrder = 9
       end
       object edtTelefone: TMaskEdit
         Left = 523
@@ -200,7 +200,7 @@ inherited frmCadastroCliente: TfrmCadastroCliente
         Height = 21
         EditMask = '(99)9999-9999;1;_'
         MaxLength = 13
-        TabOrder = 8
+        TabOrder = 6
         Text = '(  )    -    '
       end
       object edtEstado: TLabeledEdit
@@ -212,15 +212,15 @@ inherited frmCadastroCliente: TfrmCadastroCliente
         EditLabel.Height = 13
         EditLabel.Caption = 'Estado'
         MaxLength = 2
-        TabOrder = 9
+        TabOrder = 2
       end
     end
   end
   inherited pnlRodape: TPanel
     Top = 319
     Width = 1118
-    ExplicitTop = 269
-    ExplicitWidth = 830
+    ExplicitTop = 319
+    ExplicitWidth = 1118
     inherited brnFechar: TBitBtn
       Left = 1028
       ExplicitLeft = 1028

@@ -80,6 +80,13 @@ inherited frmCadastroProduto: TfrmCadastroProduto
         Height = 13
         Caption = 'Quantidade'
       end
+      object lblCategoria: TLabel
+        Left = 3
+        Top = 138
+        Width = 47
+        Height = 13
+        Caption = 'Categoria'
+      end
       object edtNome: TLabeledEdit
         Left = 3
         Top = 65
@@ -102,7 +109,7 @@ inherited frmCadastroProduto: TfrmCadastroProduto
         EditLabel.Caption = 'C'#243'digo'
         MaxLength = 10
         NumbersOnly = True
-        TabOrder = 1
+        TabOrder = 4
       end
       object edtDescricao: TLabeledEdit
         Left = 3
@@ -120,7 +127,7 @@ inherited frmCadastroProduto: TfrmCadastroProduto
         Top = 65
         Width = 121
         Height = 21
-        TabOrder = 3
+        TabOrder = 1
       end
       object edtQuantidade: TCurrencyEdit
         Left = 539
@@ -128,11 +135,11 @@ inherited frmCadastroProduto: TfrmCadastroProduto
         Width = 121
         Height = 21
         DisplayFormat = ',0.00;-,0.00'
-        TabOrder = 4
+        TabOrder = 3
       end
       object edtCategoria: TDBLookupComboBox
         Left = 3
-        Top = 152
+        Top = 155
         Width = 500
         Height = 21
         KeyField = 'CATEGORIA_ID'

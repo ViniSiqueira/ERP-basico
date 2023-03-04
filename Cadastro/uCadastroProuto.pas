@@ -30,6 +30,7 @@ type
     dtsCategoria: TDataSource;
     qryCategoriaCATEGORIA_ID: TIntegerField;
     qryCategoriaDESCRICAO: TWideStringField;
+    lblCategoria: TLabel;
   private
     { Private declarations }
   public
