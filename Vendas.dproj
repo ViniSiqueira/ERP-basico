@@ -125,7 +125,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Classes\cCadCliente.pas"/>
-        <DCCReference Include="Cadastro\uCadastroProuto.pas">
+        <DCCReference Include="Cadastro\uCadastroProduto.pas">
             <Form>frmCadastroProduto</Form>
             <FormType>dfm</FormType>
         </DCCReference>
