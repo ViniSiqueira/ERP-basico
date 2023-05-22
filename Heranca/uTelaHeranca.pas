@@ -40,6 +40,8 @@ type
     procedure gridListagemTitleClick(Column: TColumn);
     procedure mskPesquisarChange(Sender: TObject);
     procedure gridListagemDblClick(Sender: TObject);
+    procedure gridListagemKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
     FEstadoCadastro: TEstadoCadastro;
@@ -50,11 +52,13 @@ type
     procedure ExibirCampoPesquisa(campo: String; tLabel: TLabel);
     procedure DesabilitarCampoPk;
     procedure LimparCampos;
+    procedure VerificarAlteracaoRegistro;
   public
     { Public declarations }
 
     function Apagar: Boolean; virtual;
     function Salvar(estadoCadastro: TEstadoCadastro): Boolean; virtual;
+    procedure BloquearCtrlDel(var Key: Word; Shift: TShiftState);
 
     property EstadoCadastro: TEstadoCadastro read FEstadoCadastro write FEstadoCadastro;
     property IndiceAtual: String read FIndiceAtual write FIndiceAtual;
@@ -96,6 +100,12 @@ end;
 procedure TfrmTelaHeranca.gridListagemDblClick(Sender: TObject);
 begin
   btnAlterar.Click;
+end;
+
+procedure TfrmTelaHeranca.gridListagemKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  BloquearCtrlDel(Key, Shift);
 end;
 
 procedure TfrmTelaHeranca.gridListagemTitleClick(Column: TColumn);
@@ -144,6 +154,21 @@ begin
   Result := True;
 end;
 
+procedure TfrmTelaHeranca.VerificarAlteracaoRegistro;
+begin
+  if qryListagem.RecordCount = 0 then
+  begin
+    MessageDlg('Atenção! Para alterar é necessário ter um registro cadastrado', mtInformation,[mbOk],0);
+    abort;
+  end;
+end;
+
+procedure TfrmTelaHeranca.BloquearCtrlDel(var Key: Word; Shift: TShiftState);
+begin
+  if (Shift = [ssCtrl]) and (Key = 46) then
+    Key := 0;
+end;
+
 procedure TfrmTelaHeranca.brnFecharClick(Sender: TObject);
 begin
   Close;
@@ -153,6 +178,7 @@ procedure TfrmTelaHeranca.btnAlterarClick(Sender: TObject);
 begin
   try
     ControlarBotoes(btnNovo, btnAlterar, btnCancelar, btnGravar, btnApagar, btnNavegator, pgcPrincipal, false);
+    VerificarAlteracaoRegistro;
   finally
     FEstadoCadastro := ecAlterar;
   end;

@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uDtmConexao, Enter;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uDtmConexao, Enter, uFrmAtualizaDB;
 
 type
   TfrmPrincipal = class(TForm)
@@ -30,10 +30,12 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure menuClienteClick(Sender: TObject);
     procedure menuProdutoClick(Sender: TObject);
+    procedure menuVendasClick(Sender: TObject);
   private
     { Private declarations }
     TeclaEnter: TMREnter;
     procedure CriarConexaoComBanco;
+    procedure AtualizacaoBancoDados(form: TfrmAtualizaDB);
 
   public
     { Public declarations }
@@ -47,10 +49,25 @@ implementation
 {$R *.dfm}
 
 uses
-  uCadastroCategoria, uCadastroCliente, uCadastroProduto;
+  uCadastroCategoria, uCadastroCliente, uCadastroProduto, uProcessoVenda;
+
+procedure TfrmPrincipal.AtualizacaoBancoDados(form: TfrmAtualizaDB);
+begin
+  form.cbConexao.Checked := True;
+  form.Refresh;
+  Sleep(1000);
+  dtmConexao.qryTabelas.ExecSql;
+  form.cbTabelas.Checked := True;
+  form.Refresh;
+  Sleep(1000);
+end;
 
 procedure TfrmPrincipal.CriarConexaoComBanco;
 begin
+  frmAtualizaDB := TfrmAtualizaDB.Create(self);
+  frmAtualizaDB.Show;
+  frmAtualizaDB.Refresh;
+
   dtmConexao := TdtmConexao.Create(Self);
   dtmConexao.ConexaoDB.SQLHourGlass := true;
   dtmConexao.ConexaoDB.Protocol := 'mssql';
@@ -59,6 +76,9 @@ begin
   dtmConexao.ConexaoDB.Port := 1433;
   dtmConexao.ConexaoDB.DataBase := 'VINICIUS_PRD';
   dtmConexao.ConexaoDB.Connected := true;
+
+  AtualizacaoBancoDados(frmAtualizaDB);
+  frmAtualizaDB.Free;
 end;
 
 procedure TfrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -100,6 +120,13 @@ begin
   frmCadastroProduto := TfrmCadastroProduto.Create(self);
   frmCadastroProduto.ShowModal;
   frmCadastroProduto.Release;
+end;
+
+procedure TfrmPrincipal.menuVendasClick(Sender: TObject);
+begin
+  frmProcessoVenda := TfrmProcessoVenda.Create(self);
+  frmProcessoVenda.ShowModal;
+  frmProcessoVenda.Release;
 end;
 
 end.

@@ -76,6 +76,7 @@ object frmTelaHeranca: TfrmTelaHeranca
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
         OnDblClick = gridListagemDblClick
+        OnKeyDown = gridListagemKeyDown
         OnTitleClick = gridListagemTitleClick
       end
     end
@@ -91,6 +92,9 @@ object frmTelaHeranca: TfrmTelaHeranca
     Height = 41
     Align = alBottom
     TabOrder = 1
+    DesignSize = (
+      1101
+      41)
     object btnNovo: TBitBtn
       Left = 4
       Top = 6
@@ -276,6 +280,7 @@ object frmTelaHeranca: TfrmTelaHeranca
       Top = 6
       Width = 75
       Height = 25
+      Anchors = [akTop, akRight]
       Caption = '&Fechar'
       Glyph.Data = {
         36030000424D3603000000000000360000002800000010000000100000000100
